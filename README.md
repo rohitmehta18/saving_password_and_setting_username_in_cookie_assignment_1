@@ -1,26 +1,29 @@
-# Lab Exercise: Using Cookie increase the Count
+# Lab Exercies: How to Encrypt and Decrypt a JWT Token
 
 ## 🎯 Objectives
 
-- Understand how to manipulate cookies in web development to track and update a count.
-- Learn to implement client-side logic to increase a cookie-based count with each user interaction.
+- Understand the process of JWT token encryption and decryption for secure data transmission.
 
-## 🛠 Prerequisites
+- Implement encryption and decryption in a full-stack environment to enhance application security.
 
-- Basic knowledge of HTML, JavaScript, and web development concepts.
+## 📚 Prerequisites
 
-## 📝 Steps
+- Basic understanding of JWT and NodeJs.
 
-1. **Initialize the Cookie**: Start by checking if the count cookie exists. If not, create it with an initial value of `0`.
+## 🛠 Steps
 
-2. **Read the Cookie**: Use JavaScript to read the current value of the count cookie on each page load.
+1. **Introduction to JWT:** Brief overview of JWT tokens and their importance in full-stack development.
 
-3. **Increment the Count**: Develop a function to increase the count each time content loaded.
+2. **Encryption Methods:** Explore popular encryption algorithms suitable for JWT tokens.
 
-4. **Update the Cookie**: After incrementing, update the cookie with the new count value.
+3. **Implementing Encryption:** Step-by-step guide on encrypting a JWT token before sending it over the network.
 
-5. **Display the Count**: Show the updated count on the webpage.
+4. **Implementing Decryption:** Learn how to safely decrypt the received JWT token to retrieve original data.
 
-## 🏁 Outcome
+5. **Check Your Answer:** Check the console to see if your function works correctly. You will see `Success` in the console.
 
-- Mastery in using cookies to track and update a user-specific count in a web application. 🍪🔢🚀
+6. **Iterate and Learn**: If unsuccessful, analyze your approach, learn from it, and try again!
+
+## ✅ Outcome
+
+- Ability to securely handle JWT tokens in your full-stack projects.

@@ -1,23 +1,29 @@
-document.addEventListener('DOMContentLoaded', function() {
-  // Function to get the value of a cookie by name
-  function getCookie(name) {
-    let cookieArray = document.cookie.split('; ');
-    let cookie = cookieArray.find((row) => row.startsWith(name + '='));
-    return cookie ? cookie.split('=')[1] : null;
+const jwt = require('jsonwebtoken');
+
+// Secret key used to sign and verify the token
+const secretKey = 'your-secret-key'; // Replace this with a secure key, do not hardcode in production!
+
+// Encrypt function to generate the token from a payload
+const encrypt = (payload) => {
+  // Sign the payload and create a token
+  const token = jwt.sign(payload, secretKey, { expiresIn: '1h' }); // Token will expire in 1 hour
+  return token;
+};
+
+// Decrypt function to decode the token and get the payload
+const decrypt = (token) => {
+  try {
+    // Verify the token and decode the payload
+    const decoded = jwt.verify(token, secretKey);
+    return decoded; // Return the decoded payload if the token is valid
+  } catch (error) {
+    // Handle any error (e.g., token is invalid or expired)
+    console.error('Invalid or expired token:', error);
+    return null;
   }
+};
 
-  // Function to set a cookie
-  function setCookie(name, value, daysToExpire) {
-    let date = new Date();
-    date.setTime(date.getTime() + daysToExpire * 24 * 60 * 60 * 1000);
-    document.cookie =
-      name + '=' + value + ';expires=' + date.toUTCString() + ';path=/';
-  }
-
-  // 1. Get the value of the 'count' cookie
-  // 2. If the cookie exists, increment the value and update the cookie
-  // 3. If the cookie does not exist, create it and set the value to 1
-  // 4. Display the count on the webpage
-
-  // your code here
-});
+module.exports = {
+  encrypt,
+  decrypt
+};
